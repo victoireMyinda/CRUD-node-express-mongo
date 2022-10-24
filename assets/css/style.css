@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+:root {
+    --dark: #2b2d42;
+    --light: #adb5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Poppins';
+}
+
+header {
+    height: 200px;
+    background-color: rgb(14, 14, 116);
+}
+
+.titre h1 {
+    padding: 80px;
+    color: white;
+}
+
+.btn-addUser {
+    margin-top: 40px;
+}
+
+.table-striped {
+    margin-top: 20px;
+}

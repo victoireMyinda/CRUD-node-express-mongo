@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>User Manager CRUD with Nodejs</title>
+</head>
+
+<body>
+    <!----HEADER-->
+    <header id="header">
+        <div class="titre">
+            <h1>Membres</h1>
+        </div>
+    </header>
+    <!---- /HEADER-->
+
+    <!---Main-->
+    <main id=" site-main ">
+        <div class="container-fluid">
+            <div class="box-nav d-flex justify-between">
+                <a href="/" class="border-shadow">
+                    <button class="btn btn-primary btn-addUser">
+              <span class="text-gradient"
+                >New User <i class="fas fa-user"></i
+              ></span>
+            </button>
+                </a>
+            </div>
+
+            <!--form handling-->
+            <form action="" method="POST ">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>FirstName</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Sexe</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <td>0</td>
+                        <td>Myinda</td>
+                        <td>Victoire</td>
+                        <td>myindavictoire@gmail.com</td>
+                        <td>+243816644420</td>
+                        <td>M</td>
+                        <td>1</td>
+                        <td>
+                            <a href="/updoat">
+                                <button class="btn btn-primary">
+                                <i class="fas fa-pencil-alt"></i>
+                              </button>
+                            </a>
+
+                            <a href="/updoat">
+                                <button class="btn btn-dark">
+                                <i class="fas fa-times"></i>
+                              </button>
+                            </a>
+                        </td>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+
+    <!---/Main-->
+</body>
+
+</html>

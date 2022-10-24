@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+:root {
+    --dark: #2b2d42;
+    --light: #adb5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    height: 300px;
+    background-color: rgb(14, 14, 116);
+}
+
+.titre h1 {
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}

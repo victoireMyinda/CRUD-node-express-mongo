@@ -1,0 +1,68 @@
+<!-----Include Header-->
+<%- include("includes/_header.ejs") %>
+    <!-----/Include Header-->
+
+    <main>
+        <form action="" id="add-user">
+            <div class="container-fluid">
+                <!-----row1-->
+                <div class="row justify-content-center mt-3">
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-----row2-->
+                <div class="row justify-content-center mt-3">
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="phone" class="form-control" id="phone" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-----row3-->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-4">
+                        <select class="form-select" aria-label="Default select example">
+            <option selected>Select your sexe</option>
+            <option value="1">M</option>
+            <option value="2">F</option>
+          </select>
+                    </div>
+
+                    <div class="col-4">
+                        <select class="form-select" aria-label="Default select example">
+            <option selected>Connect your status</option>
+            <option value="1">0</option>
+            <option value="2">1</option>
+          </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <button class="btn btn-primary w-25">Send your data</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-----Include Header-->
+    <%- include("includes/_footer.ejs") %>
+        <!-----/Include Header-->
