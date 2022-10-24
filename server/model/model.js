@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
 
 var schema = new mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         required: true
     },
 
-    Firstname: {
+    firstname: {
         type: String,
         required: true
     },
 
-    Email: {
+    email: {
         type: String,
         required: true,
         unique: true
