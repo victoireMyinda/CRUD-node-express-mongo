@@ -1,3 +1,4 @@
+const { restart } = require('nodemon');
 const userDB = require('../model/model');
 
 
@@ -5,7 +6,7 @@ const userDB = require('../model/model');
 exports.create = (req, res) => {
     //validate request
     if (!req.body) {
-        reportError.status(400)
+        res.status(400)
             .send({ message: "request can not be empty" })
         return;
     }
@@ -20,14 +21,15 @@ exports.create = (req, res) => {
         status: req.body.status
     })
 
-    //save user in de database
+    //save user in database
     user
         .save(user)
         .then(data => {
             res.send(data)
+                //res.redirect('/add-user');
         })
         .catch(err => {
-            restart.status(500)
+            res.status(500)
                 .send({
                     message: err.message || "some error occured while creating a create opreation"
                 })
@@ -35,17 +37,77 @@ exports.create = (req, res) => {
 
 }
 
-//Find all users/one user
+// retrieve and return all users/ retrive and return a single user
 exports.find = (req, res) => {
 
+    if (req.query.id) {
+        const id = req.query.id;
+
+        userDB.findById(id)
+            .then(data => {
+                if (!data) {
+                    res.status(404).send({ message: "Not found user with id " + id })
+                } else {
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ message: "Erro retrieving user with id " + id })
+            })
+
+    } else {
+        userDB.find()
+            .then(user => {
+                res.send(user)
+            })
+            .catch(err => {
+                res.status(500).send({ message: err.message || "Error Occurred while retriving user information" })
+            })
+    }
+
+
 }
 
-//Update user 
+
+// Update a new idetified user by user id
 exports.update = (req, res) => {
+    if (!req.body) {
+        return res
+            .status(400)
+            .send({ message: "Data to update can not be empty" })
+    }
 
+    const id = req.params.id;
+    userDB.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+        .then(data => {
+            if (!data) {
+                res.status(404).send({ message: `Cannot Update user with ${id}. Maybe user not found!` })
+            } else {
+                res.send(data)
+            }
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Error Update user information" })
+        })
 }
 
-// Delete user 
+// Delete a user with specified user id in the request
 exports.delete = (req, res) => {
+    const id = req.params.id;
 
+    userDB.findByIdAndDelete(id)
+        .then(data => {
+            if (!data) {
+                res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
+            } else {
+                res.send({
+                    message: "User was deleted successfully!"
+                })
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Could not delete User with id=" + id
+            });
+        });
 }

@@ -17,10 +17,10 @@ route.get("/listUsers", services.listUsers)
 route.get("/updoat", services.updoat)
 
 //API CRUD
-route.post('api/listUsers', controller.create)
-route.get('api/listUsers', controller.find)
-route.put('api/listUsers/:id', controller.update)
-route.delete('api/listUsers/:id', controller.delete)
+route.post("/api/users", controller.create)
+route.get("/api/users", controller.find)
+route.put("/api/users/:id", controller.update)
+route.delete("api/users/:id", controller.delete)
 
 
 
